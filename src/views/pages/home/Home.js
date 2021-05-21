@@ -13,10 +13,12 @@ let Home = {
   render: async () => {
     const jokes = await getRandomJoke();
     let view = /*html*/`
-        <div>
-          <h1>Primeira página</h1>
-          <img src=${jokes.icon_url} alt="Image" />
-          ${jokes.value}
+        <div class="header">
+          <h1>Chuck Norris ensinamento</h1>
+          <div class="header__content">
+            <img src=${jokes.icon_url} alt="Image" />
+            <p>${jokes.value}</p> 
+          </div>
         </div>
         <hr />
         <div class="formcontainer">
