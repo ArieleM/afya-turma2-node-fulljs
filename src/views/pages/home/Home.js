@@ -13,22 +13,23 @@ let Home = {
   render: async () => {
     const jokes = await getRandomJoke();
     let view = /*html*/`
+    <div class="container">
+      <div class="jokes">
         <div class="header">
           <h1>Chuck Norris ensinamento</h1>
-          <div class="header__content">
-            <img src=${jokes.icon_url} alt="Image" />
-            <p>${jokes.value}</p> 
-          </div>
+          <hr />
+          <p>${jokes.value}</p> 
         </div>
-        <hr />
         <div class="formcontainer">
           <form id="form">
-            <input type="text" placeholder="name" id="name" />
-            <input type="text" placeholder="email" id="email" />
-            <input type="text" placeholder="phone" id="phone" />
+            <input type="text" placeholder="Name" id="name" />
+            <input type="text" placeholder="Email" id="email" />
+            <input type="text" placeholder="Phone" id="phone" />
             <input type="submit" value="Enviar" />
           </form>
         </div>
+      </div>
+    </div>
     `;
 
     return view
@@ -51,6 +52,10 @@ let Home = {
       postForm.post('', postData).then(
         response => {
           alert('Tudo certo!')
+          document.querySelector('#name').value="";
+          document.querySelector('#email').value="";
+          document.querySelector('#phone').value="";
+          
         }
       ).catch(e=> alert('Algum de errado não está certo'))
 
