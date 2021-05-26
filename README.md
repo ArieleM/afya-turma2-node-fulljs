@@ -1,6 +1,8 @@
 # Afya Labs :)
 ## Template Node FullJS
 
+### Vejo o projeto online [aqui](https://afya-turma2-node-fulljs.vercel.app/)
+
 Para iniciar o projeto:
 `git clone https://github.com/ArieleM/afya-turma2-node-fulljs.git`
 
